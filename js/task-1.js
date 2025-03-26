@@ -3,30 +3,30 @@ const titles = document.querySelectorAll("h2");
 let counter = 0;
 
 
-// counts categories
 function countCategories(categories){
     categories.forEach(category =>{
+        counter++
+
         category.style.listStyle = "none";
         category.style.background = "#f6f6fe";
         category.style.padding = "16px";
-
         category.style.borderRadius = "8px";
-    counter++});  
+    });  
    return `Number of categories: ${counter}`;
 };
 console.log(countCategories(categories));
 
 
-// shows titles 
 function showTitles(titlesList){
     const result = titlesList.forEach(title => { console.log(`Category: ${title.textContent}`);
     title.style.margin = "0px";
     title.style.marginBottom = "16px";
+    
     const parent = title.parentElement;
     const ul = parent.querySelector('ul');
     ul.style.listStyleType = "none";
     ul.style.padding = "0px"
-    // const itemLength = ul.querySelectorAll('li').length;
+  
     const items = ul.querySelectorAll('li');
     items.forEach(item =>{
         item.style.border = "1px solid #808080";

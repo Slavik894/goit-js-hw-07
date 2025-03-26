@@ -4,7 +4,7 @@ const greetingMessage = document.querySelector("h1");
 
 nameInputEl.addEventListener("input", (logMessage) => {
     if(logMessage.currentTarget.value.trim() === ''){
-         nameOutputEl.textContent = "Anonymus";
+         nameOutputEl.textContent = "Anonymous";
    }
  else{
     nameOutputEl.textContent = logMessage.currentTarget.value.trim(); 
