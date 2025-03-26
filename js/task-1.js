@@ -1,11 +1,11 @@
 const categories = document.querySelectorAll("#categories .item");
-let counter = 0;
+
 
 
 function displayInfo(categoriesList){
-    
+    console.log(`Number of categories: ${categoriesList.length}`);
     categoriesList.forEach(category =>{
-            counter++;
+            
         const title = category.querySelector(".item-title");
         if(title){
             console.log(`Category: ${title.textContent}`);
@@ -16,7 +16,6 @@ function displayInfo(categoriesList){
         
         console.log(`Elements: ${countCategoryItems}`);
     });
-     console.log(`Number of categories: ${counter}`);
 
 };
 
