@@ -1,48 +1,27 @@
-const categories = document.querySelectorAll(".item");
-const titles = document.querySelectorAll("h2");
+const categories = document.querySelectorAll("#categories .item");
 let counter = 0;
 
 
-function countCategories(categories){
-    categories.forEach(category =>{
-        counter++
-
-        category.style.listStyle = "none";
-        category.style.background = "#f6f6fe";
-        category.style.padding = "16px";
-        category.style.borderRadius = "8px";
-    });  
-   return `Number of categories: ${counter}`;
-};
-console.log(countCategories(categories));
-
-
-function showTitles(titlesList){
-    const result = titlesList.forEach(title => { console.log(`Category: ${title.textContent}`);
-    title.style.margin = "0px";
-    title.style.marginBottom = "16px";
+function displayInfo(categoriesList){
     
-    const parent = title.parentElement;
-    const ul = parent.querySelector('ul');
-    ul.style.listStyleType = "none";
-    ul.style.padding = "0px"
-  
-    const items = ul.querySelectorAll('li');
-    items.forEach(item =>{
-        item.style.border = "1px solid #808080";
-        item.style.borderRadius = " 4px";
-        item.style.marginBottom = "8px";
-        item.style.paddingLeft = "16px";
-        item.style.paddingTop = "8px";
-        item.style.paddingBottom = "8px";
+    categoriesList.forEach(category =>{
+            counter++;
+        const title = category.querySelector(".item-title");
+        if(title){
+            console.log(`Category: ${title.textContent}`);
+        }
+        const categoryItems = category.querySelector("ul");
+        const countCategoryItems = categoryItems.querySelectorAll("li").length;
 
+        
+        console.log(`Elements: ${countCategoryItems}`);
     });
-    const itemLength = items.length;
-    console.log(`Elements: ${itemLength}`);      
-});  
-return result;
+     console.log(`Number of categories: ${counter}`);
+
 };
-showTitles(titles);
+
+displayInfo(categories); 
+
 
 const categoriesUl = document.querySelector("#categories");
 categoriesUl.style.display = "flex";
