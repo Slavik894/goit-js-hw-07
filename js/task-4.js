@@ -5,21 +5,22 @@ const buttonEl = document.querySelector("button")
 
 loginFormEl.addEventListener("submit", event =>{
     event.preventDefault();
-    const email = loginFormEl.elements.email.value;
-    const password = loginFormEl.elements.password.value;
+    const email = loginFormEl.elements.email.value.trim();
+    const password = loginFormEl.elements.password.value.trim();
 
-    if(email.trim() === "" || password.trim() === ""){
+    if(email === "" || password === ""){
         alert('All form fields must be filled in');
+        loginFormEl.reset();
+        return
     }
-    else{
         const result = {
-            email: loginFormEl.elements.email.value.trim(),
-            password: loginFormEl.elements.password.value.trim(),
-        } 
+            email: loginFormEl.elements.email.value,
+            password: loginFormEl.elements.password.value,
+        };
         console.log(result);
-    }
+        loginFormEl.reset();
    
-    loginFormEl.reset();
+    
 });
 
 labels.forEach(label =>
